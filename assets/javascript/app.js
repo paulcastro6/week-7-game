@@ -79,8 +79,8 @@ trainData.on("child_added", function(childSnapshot,prevChildKey){
 		var nextTrain = moment().add(tMinutesTillTrain, "minutes")
 		var y=moment(nextTrain).format("hh:mm");
 		console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"))
-		var x=$('#trainTable');
-		x.append($('<tr/>')
+		var refTable=$('#trainTable');
+		refTable.append($('<tr/>')
 			.append($('<td/>').text(childSnapshot.val().name))
 			.append($('<td/>').text(childSnapshot.val().destination))
 			.append($('<td/>').text(childSnapshot.val().firstTime))
